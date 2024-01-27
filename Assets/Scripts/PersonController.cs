@@ -14,6 +14,20 @@ public class PersonController : MonoBehaviour
     Vector3[] moveDirections = new Vector3[] { new Vector3(0,0,1), new Vector3(0,0,-1) };
     int currentMoveDirection;
 
+      private Rigidbody rb;
+    private void Awake(){
+      rb = GetComponent<Rigidbody>();
+    }
+
+
+    void OnCollisionEnter(Collision collision) 
+{
+     if(gameObject.CompareTag("wall"))
+        {
+          rb.velocity = Vector3.zero;
+        }
+}
+
 
     // Start is called before the first frame update
     void Start()
