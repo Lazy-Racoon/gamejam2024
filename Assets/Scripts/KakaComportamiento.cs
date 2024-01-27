@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SocialPlatforms.Impl;
 
 public class KakaComportamiento : MonoBehaviour
 {
     public float speed = 3.5f;
     public int score;
+    public TextMeshProUGUI scoreText;
 
     // Update is called once per frame
     private void Update()
