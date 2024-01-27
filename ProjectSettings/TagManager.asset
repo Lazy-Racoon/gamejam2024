@@ -7,6 +7,7 @@ TagManager:
   - wall
   - Kaka
   - npc
+  - CanvasText
   layers:
   - Default
   - TransparentFX

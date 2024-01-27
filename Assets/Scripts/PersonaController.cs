@@ -7,11 +7,13 @@ using UnityEngine;
 public class PersonaController : MonoBehaviour
 {
     public float velocity;
-    public TextMeshProUGUI scoreTExt;
+    private TextMeshProUGUI scoreTExt;
+    private GameObject canvas;
     // Start is called before the first frame update
     
     private void Awake(){
-      scoreTExt.text = "Score: ";
+      GameObject canvas = GameObject.FindGameObjectsWithTag("CanvasText")[0];
+      scoreTExt = canvas.GetComponent<TextMeshProUGUI>();     
     }
 
     void OnTriggerEnter2D(Collider2D element)
@@ -24,7 +26,8 @@ public class PersonaController : MonoBehaviour
 
     void Start()
     {
-        //Only one player, so should be the first
+        //Only one player, so should be the first        
+        scoreTExt.text = "Score: " + MonoComportamiento.score;;
     }
 
     // Update is called once per frame
