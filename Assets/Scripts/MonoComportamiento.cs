@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class MonoComportamiento : MonoBehaviour
@@ -8,6 +9,9 @@ public class MonoComportamiento : MonoBehaviour
     public float velocity;
     public KakaComportamiento kakaPrefab;
     public Transform kakaOffSet;
+
+    public static int score = 0; 
+
     // Start is called before the first frame update
     void Start()
     {
