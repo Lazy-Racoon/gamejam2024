@@ -14,11 +14,11 @@ public class CreadorDeNPC : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("GenerarMama", 3.0f, 10.0f);
-        InvokeRepeating("GenerarNinoConGlobo", 4.0f, 6.0f);
-        InvokeRepeating("GenerarCiego", 1.0f, 4.0f);
-        InvokeRepeating("GenerarVieja", 1.0f, 7.0f);
-        InvokeRepeating("GenerarRobot", 1.0f, 7.0f);
+        InvokeRepeating("GenerarMama", 7.0f, 10.0f);
+        InvokeRepeating("GenerarNinoConGlobo", 3.0f, 6.0f);
+        InvokeRepeating("GenerarCiego", 5.0f, 10.0f);
+        InvokeRepeating("GenerarVieja", 13.0f, 10.0f);
+        InvokeRepeating("GenerarRobot", 10.0f, 20.0f);
     }
 
     // Update is called once per frame

@@ -13,7 +13,13 @@ public class KakaComportamiento : MonoBehaviour
     private void Update()
     {
         transform.position += transform.up * Time.deltaTime * speed;
+        
         //transform.position += transform.forward * Time.deltaTime * 6.5f;
+    }
+    private void FixedUpdate()
+    {
+        transform.localScale = new Vector3(transform.localScale.x - 0.005f, transform.localScale.y - 0.005f, transform.localScale.z - 0.005f);
+
     }
 
     private void OnTriggerEnter2D(Collider2D npc)
