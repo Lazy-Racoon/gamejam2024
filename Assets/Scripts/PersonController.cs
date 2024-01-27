@@ -8,26 +8,26 @@ public class PersonController : MonoBehaviour
     public float speed = 10f;
     private float x,y,z;
     
-    Vector2 decisionTime = new Vector2(1, 4);
-    float decisionTimeCount = 0;
+    private Vector2 decisionTime = new Vector2(1, 4);
+    private float decisionTimeCount = 0;
 
-    Vector3[] moveDirections = new Vector3[] { new Vector3(0,0,1), new Vector3(0,0,-1) };
-    int currentMoveDirection;
+    private Vector3[] moveDirections = new Vector3[] { new Vector3(0,0,1), new Vector3(0,0,-1) };
+    private int currentMoveDirection;
 
-      private Rigidbody rb;
+    private Rigidbody rb;
+
     private void Awake(){
       rb = GetComponent<Rigidbody>();
     }
 
 
     void OnCollisionEnter(Collision collision) 
-{
+    {
      if(gameObject.CompareTag("wall"))
-        {
+        {//Stop moving when hitting a wall
           rb.velocity = Vector3.zero;
         }
-}
-
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -36,8 +36,8 @@ public class PersonController : MonoBehaviour
         x = gameObject.transform.position.x;
         y = gameObject.transform.position.y;
         z = gameObject.transform.position.z;
-        decisionTimeCount = UnityEngine.Random.Range(decisionTime.x, decisionTime.y);
-        
+
+        decisionTimeCount = UnityEngine.Random.Range(decisionTime.x, decisionTime.y);        
     }
 
     // Update is called once per frame
@@ -46,7 +46,9 @@ public class PersonController : MonoBehaviour
         x = gameObject.transform.position.x;
         y = gameObject.transform.position.y;
         z = gameObject.transform.position.z;
+
         transform.Translate(moveDirections[currentMoveDirection] * speed * Time.deltaTime);
+
         if (decisionTimeCount > 0) {
             decisionTimeCount -= Time.deltaTime;
         }        
@@ -62,7 +64,7 @@ public class PersonController : MonoBehaviour
 
     void ChooseMoveDirection()
     {
-        // Choose whether to move sideways or up/down
+        // Choose whether to move sideways or left/right
         currentMoveDirection = Mathf.FloorToInt(UnityEngine.Random.Range(0, moveDirections.Length));
     }
 }
