@@ -12,6 +12,9 @@ public class MonkeyController : MonoBehaviour
     private float x,y,z;
     private Rigidbody rb;
 
+    public KakaComportamiento kakaPrefab;
+    public Transform kakaOffSet;
+
     private void Awake(){
       rb = GetComponent<Rigidbody>();
     }
@@ -33,8 +36,9 @@ public class MonkeyController : MonoBehaviour
 
         rb.velocity = new Vector3(Input.GetAxis("Horizontal")* speed, 0, Input.GetAxis("Vertical") * speed);
 
-        if(Input.GetKey(KeyCode.Space)){
+        if(Input.GetKeyDown(KeyCode.Space)){
             Debug.Log("Tira kaka en"+ x+" "+y+" "+z);
-         }
+            Instantiate(kakaPrefab, kakaOffSet.position, transform.rotation);
+        }
     }
 }
