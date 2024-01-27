@@ -10,5 +10,6 @@ public class KakaComportamiento : MonoBehaviour
     private void Update()
     {
         transform.position += transform.up * Time.deltaTime * speed;
+        transform.position += transform.forward * Time.deltaTime * 6.5f;
     }
 }

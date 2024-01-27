@@ -35,10 +35,22 @@ public class MonkeyController : MonoBehaviour
         z = gameObject.transform.position.z;
 
         rb.velocity = new Vector3(Input.GetAxis("Horizontal")* speed, 0, Input.GetAxis("Vertical") * speed);
+        lanzamiento();
 
-        if(Input.GetKeyDown(KeyCode.Space)){
-            Debug.Log("Tira kaka en"+ x+" "+y+" "+z);
+
+    }
+
+    void lanzamiento()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
             Instantiate(kakaPrefab, kakaOffSet.position, transform.rotation);
+            StartCoroutine(Cooldown());
         }
+    }
+
+    private IEnumerator Cooldown()
+    {
+        yield return new WaitForSeconds(3f);
     }
 }
