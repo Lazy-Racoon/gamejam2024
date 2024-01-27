@@ -28,6 +28,9 @@ public class MonkeyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        x = gameObject.transform.position.x;
+        y = gameObject.transform.position.y;
+        z = gameObject.transform.position.z;
         rb.velocity = new Vector3(Input.GetAxis("Horizontal")* speed, 0, Input.GetAxis("Vertical") * speed);
         if(Input.GetKey(KeyCode.Space)){
             Debug.Log("Tira kaka en"+ x+" "+y+" "+z);
