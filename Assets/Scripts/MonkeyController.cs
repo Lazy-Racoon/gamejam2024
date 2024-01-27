@@ -34,7 +34,7 @@ public class MonkeyController : MonoBehaviour
         y = gameObject.transform.position.y;
         z = gameObject.transform.position.z;
 
-        rb.velocity = new Vector3(Input.GetAxis("Horizontal")* speed, 0, Input.GetAxis("Vertical") * speed);
+        rb.velocity = new Vector3(Input.GetAxis("Horizontal")* speed, 0, 0);
         lanzamiento();
 
 
