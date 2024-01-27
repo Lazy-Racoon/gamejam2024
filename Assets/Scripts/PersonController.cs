@@ -47,7 +47,9 @@ public class PersonController : MonoBehaviour
         y = gameObject.transform.position.y;
         z = gameObject.transform.position.z;
         transform.Translate(moveDirections[currentMoveDirection] * speed * Time.deltaTime);
-        if (decisionTimeCount > 0) decisionTimeCount -= Time.deltaTime;
+        if (decisionTimeCount > 0) {
+            decisionTimeCount -= Time.deltaTime;
+        }        
         else
         {
             // Choose a random time delay for taking a decision ( changing direction, or standing in place for a while )
@@ -56,8 +58,6 @@ public class PersonController : MonoBehaviour
             // Choose a movement direction, or stay in place
             ChooseMoveDirection();
         }
-        
-        //transform.Translate(0,0,1 * speed * Time.deltaTime);
     }
 
     void ChooseMoveDirection()
