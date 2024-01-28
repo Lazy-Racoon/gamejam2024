@@ -3,21 +3,23 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.U2D;
 
 public class MonoComportamiento : MonoBehaviour
 {
-
+    public GameObject spriteMono;
     public float velocity;
     public KakaComportamiento kakaPrefab;
     public Transform kakaOffSet;
     private bool enfriamiento;
     private float count = 0;
     public float TIMEMAX;
-    public static int score; 
+    public static int score;
 
     // Start is called before the first frame update
     void Start()
     {
+        
         enfriamiento = true;
     }
 
@@ -30,6 +32,8 @@ public class MonoComportamiento : MonoBehaviour
             //Hide Image
             if (count > TIMEMAX)
             {
+                Instantiate(kakaPrefab, kakaOffSet.position, transform.rotation);
+                spriteMono.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("NITO 1");
                 enfriamiento = true;
                 count = 0;
             }
@@ -46,7 +50,8 @@ public class MonoComportamiento : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space)&&enfriamiento)
         {
-            Instantiate(kakaPrefab, kakaOffSet.position, transform.rotation);
+            spriteMono.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("NITO 2");
+            
 
             enfriamiento=false;
         }
