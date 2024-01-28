@@ -41,7 +41,7 @@ public class CreadorDeNPC : MonoBehaviour
     void GenerarMama()
     {
         PersonaController person = Instantiate(mamaConBebe, personajeOffSet.position, transform.rotation);
-        person.SetPicture("vieja_cara");
+        person.SetPicture("mujer_cara");
 
     }
 
