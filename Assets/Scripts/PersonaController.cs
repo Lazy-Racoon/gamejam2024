@@ -46,7 +46,7 @@ public class PersonaController : MonoBehaviour
         if (element.tag == "Kaka"){
             GetComponent<CapsuleCollider2D>().enabled = false;
             MonoComportamiento.score+= scoreNPC;  //  The code that any instance can use to cause the score to be incremented, since the playerScore variable is a Static member, all instances of this class will have access to its value regardless of what instance next updates it.
-            scoreTExt.text = "Score: " + MonoComportamiento.score;
+            scoreTExt.text = ""+MonoComportamiento.score;
             profile.SetActive(true);
             monkeyprofile.SetActive(true);
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
@@ -58,7 +58,7 @@ public class PersonaController : MonoBehaviour
     void Start()
     {
         //Only one player, so should be the first        
-        scoreTExt.text = "Score: " + MonoComportamiento.score;
+        scoreTExt.text = ""+MonoComportamiento.score;
         profilePicture.sprite = picture;
         monkeyPicture = Resources.Load<Sprite>("score_mono");
         monkeyProfilePicture.sprite = monkeyPicture;
