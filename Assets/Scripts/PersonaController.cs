@@ -52,7 +52,7 @@ public class PersonaController : MonoBehaviour
             picture = Resources.Load<Sprite>(picturePath);
             profilePicture.sprite = picture;
             profile.SetActive(true);
-            monkeyprofile.SetActive(true);
+            //monkeyprofile.SetActive(true);
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             hurt = true;
             count = 0;    
