@@ -2188,7 +2188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boardID: tirakaka
-  displayOption: 5
+  displayOption: 6
   boardParent: {fileID: 686074391}
   rowPrefab: {fileID: 2228518243412644763, guid: f39d1e8b6224cde4d906c3065b2d4be6, type: 3}
   entriesToShow: 10
