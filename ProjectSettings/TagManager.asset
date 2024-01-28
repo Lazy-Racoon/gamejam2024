@@ -8,6 +8,8 @@ TagManager:
   - Kaka
   - npc
   - CanvasText
+  - personProfile
+  - monkeyProfile
   layers:
   - Default
   - TransparentFX

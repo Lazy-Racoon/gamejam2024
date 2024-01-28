@@ -2,18 +2,41 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PersonaController : MonoBehaviour
 {
     public float velocity;
     private TextMeshProUGUI scoreTExt;
+    private Image profilePicture;
+    private Image monkeyProfilePicture;
     private GameObject canvas;
+    private GameObject profile;
+    private GameObject monkeyprofile;
+    private bool hurt = false;
+    private float count = 0;
+    private float TIMEMAX = 1f;
+    Sprite picture;
+    Sprite monkeyPicture;
     // Start is called before the first frame update
     
     private void Awake(){
-      GameObject canvas = GameObject.FindGameObjectsWithTag("CanvasText")[0];
-      scoreTExt = canvas.GetComponent<TextMeshProUGUI>();     
+      canvas = GameObject.FindGameObjectsWithTag("CanvasText")[0];
+      //Only one element should use that tag
+      profile = FindInActiveObjectByTag("personProfile");
+      monkeyprofile = FindInActiveObjectByTag("monkeyProfile");
+      scoreTExt = canvas.GetComponent<TextMeshProUGUI>();
+      if(profile && monkeyprofile){
+      profilePicture = profile.GetComponent<Image>();
+      monkeyProfilePicture = monkeyprofile.GetComponent<Image>();
+      }
+    }
+
+    public void SetPicture(string imagePath){
+        //ProfileImage Should be in resource folder
+        picture = Resources.Load<Sprite>(imagePath);
     }
 
     void OnTriggerEnter2D(Collider2D element)
@@ -21,13 +44,21 @@ public class PersonaController : MonoBehaviour
         if (element.tag == "Kaka"){
             MonoComportamiento.score++;  //  The code that any instance can use to cause the score to be incremented, since the playerScore variable is a Static member, all instances of this class will have access to its value regardless of what instance next updates it.
             scoreTExt.text = "Score: " + MonoComportamiento.score;
+            profile.SetActive(true);
+            monkeyprofile.SetActive(true);
+            GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            hurt = true;
+            count = 0;    
         }            
     }
 
     void Start()
     {
         //Only one player, so should be the first        
-        scoreTExt.text = "Score: " + MonoComportamiento.score;;
+        scoreTExt.text = "Score: " + MonoComportamiento.score;
+        profilePicture.sprite = picture;
+        monkeyPicture = Resources.Load<Sprite>("score_mono");
+        monkeyProfilePicture.sprite = monkeyPicture;
     }
 
     // Update is called once per frame
@@ -37,7 +68,34 @@ public class PersonaController : MonoBehaviour
             // No Update On GameOver
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             return;
-        }        
-        GetComponent<Rigidbody2D>().velocity = new Vector2(velocity,0);
+        }
+        if(hurt){
+            hideProfileImage();
+        }
+        else{
+            GetComponent<Rigidbody2D>().velocity = new Vector2(velocity,0);
+        }
+    }
+
+    GameObject FindInActiveObjectByTag(string tag){
+        Transform[] objs = Resources.FindObjectsOfTypeAll<Transform>() as Transform[];
+        for (int i = 0; i < objs.Length; i++){
+            if (objs[i].hideFlags == HideFlags.None){
+                if (objs[i].CompareTag(tag)){
+                    return objs[i].gameObject;
+                }
+            }
+        }
+        return null;
+    }
+
+    void hideProfileImage(){        
+            count += Time.deltaTime;
+            //Hide Image
+            if(count > TIMEMAX){
+                profile.SetActive(false);
+                monkeyprofile.SetActive(false);
+                hurt = false;
+            }                        
     }
 }
