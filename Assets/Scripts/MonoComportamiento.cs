@@ -13,7 +13,7 @@ public class MonoComportamiento : MonoBehaviour
     public Transform kakaOffSet;
     private bool enfriamiento;
     private float count = 0;
-    public float TIMEMAX;
+    public float tiempoEntreDisparos;
     public static int score;
 
     // Start is called before the first frame update
@@ -30,7 +30,7 @@ public class MonoComportamiento : MonoBehaviour
         {
             count += Time.deltaTime;
             //Hide Image
-            if (count > TIMEMAX)
+            if (count > tiempoEntreDisparos)
             {
                 Instantiate(kakaPrefab, kakaOffSet.position, transform.rotation);
                 spriteMono.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("NITO 1");
