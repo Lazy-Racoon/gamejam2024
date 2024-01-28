@@ -37,25 +37,31 @@ public class CreadorDeNPC : MonoBehaviour
 
     void GenerarMama()
     {
-        Instantiate(mamaConBebe, personajeOffSet.position, transform.rotation);
+        PersonaController person = Instantiate(mamaConBebe, personajeOffSet.position, transform.rotation);
+        person.setPicture("vieja_cara");
+
     }
 
     void GenerarNinoConGlobo()
     {
-        Instantiate(ninoConGlobo, personajeOffSet.position, transform.rotation);
+        PersonaController person = Instantiate(ninoConGlobo, personajeOffSet.position, transform.rotation);
+        person.setPicture("vieja_cara");
     }
     void GenerarCiego()
     {
-        Instantiate(ciego, personajeOffSet.position, transform.rotation);
+        PersonaController person = Instantiate(ciego, personajeOffSet.position, transform.rotation);
+        person.setPicture("vieja_cara");
     }
 
     void GenerarVieja()
     {
-        Instantiate(vieja, personajeOffSet.position, transform.rotation);
+        PersonaController person = Instantiate(vieja, personajeOffSet.position, transform.rotation);
+        person.setPicture("vieja_cara");
     }
 
     void GenerarRobot()
     {
-        Instantiate(robot, personajeOffSet.position, transform.rotation);
+        PersonaController person = Instantiate(robot, personajeOffSet.position, transform.rotation);
+        person.setPicture("vieja_cara");
     }
 }
