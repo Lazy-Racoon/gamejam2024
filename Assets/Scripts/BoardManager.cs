@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 namespace CarterGames.Assets.LeaderboardManager.Demo
 {
-    public class ExampleManager : MonoBehaviour
+    public class BoardManager : MonoBehaviour
     {
         [SerializeField] private InputField playerName;
         
