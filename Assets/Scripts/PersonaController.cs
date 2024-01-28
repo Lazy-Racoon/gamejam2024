@@ -20,7 +20,8 @@ public class PersonaController : MonoBehaviour
     private bool hurt = false;
     private float count = 0;
     private float TIMEMAX = 1f;
-    Sprite picture;
+    private Sprite picture;
+    private string picturePath;
     Sprite monkeyPicture;
     // Start is called before the first frame update
     
@@ -38,7 +39,8 @@ public class PersonaController : MonoBehaviour
 
     public void SetPicture(string imagePath){
         //ProfileImage Should be in resource folder
-        picture = Resources.Load<Sprite>(imagePath);
+        //picture = Resources.Load<Sprite>(imagePath);
+        picturePath = imagePath;
     }
 
     void OnTriggerEnter2D(Collider2D element)
@@ -47,6 +49,8 @@ public class PersonaController : MonoBehaviour
             GetComponent<CapsuleCollider2D>().enabled = false;
             MonoComportamiento.score+= scoreNPC;  //  The code that any instance can use to cause the score to be incremented, since the playerScore variable is a Static member, all instances of this class will have access to its value regardless of what instance next updates it.
             scoreTExt.text = ""+MonoComportamiento.score;
+            picture = Resources.Load<Sprite>(picturePath);
+            profilePicture.sprite = picture;
             profile.SetActive(true);
             monkeyprofile.SetActive(true);
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
@@ -57,7 +61,9 @@ public class PersonaController : MonoBehaviour
 
     void Start()
     {
-        //Only one player, so should be the first        
+        //Only one player, so should be the first
+        //
+        profile.SetActive(false);
         scoreTExt.text = ""+MonoComportamiento.score;
         profilePicture.sprite = picture;
         monkeyPicture = Resources.Load<Sprite>("score_mono");

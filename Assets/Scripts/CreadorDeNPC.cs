@@ -48,12 +48,12 @@ public class CreadorDeNPC : MonoBehaviour
     void GenerarNinoConGlobo()
     {
         PersonaController person = Instantiate(ninoConGlobo, personajeOffSet.position, transform.rotation);
-        person.SetPicture("vieja_cara");
+        person.SetPicture("nino_cara");
     }
     void GenerarCiego()
     {
         PersonaController person = Instantiate(ciego, personajeOffSet.position, transform.rotation);
-        person.SetPicture("vieja_cara");
+        person.SetPicture("ciego_cara");
     }
 
     void GenerarVieja()
@@ -65,11 +65,11 @@ public class CreadorDeNPC : MonoBehaviour
     void GenerarRobot()
     {
         PersonaController person = Instantiate(robot, personajeOffSet.position, transform.rotation);
-        person.SetPicture("vieja_cara");
+        person.SetPicture("robot_cara");
     }
     void GenerarHombre()
     {
         PersonaController person = Instantiate(hombre, personajeOffSet.position, transform.rotation);
-        person.SetPicture("vieja_cara");
+        person.SetPicture("hombre_cara");
     }
 }
