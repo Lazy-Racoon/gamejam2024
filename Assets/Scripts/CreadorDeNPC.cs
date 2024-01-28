@@ -22,6 +22,10 @@ public class CreadorDeNPC : MonoBehaviour
         InvokeRepeating("GenerarVieja", 20.0f, 10.0f);
         InvokeRepeating("GenerarRobot", 15.0f, 7.0f);
         InvokeRepeating("GenerarHombre", 1.0f, 5.0f);
+        InvokeRepeating("GenerarMama", 30.0f, 4.0f);
+        InvokeRepeating("GenerarVieja", 35.0f, 56.0f);
+        InvokeRepeating("GenerarRobot", 32.0f, 4.0f);
+        InvokeRepeating("GenerarNinoConGlobo", 34.0f, 7.0f);
     }
 
     // Update is called once per frame

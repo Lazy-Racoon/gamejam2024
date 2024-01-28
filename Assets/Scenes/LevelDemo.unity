@@ -1273,7 +1273,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerText: {fileID: 874273449}
   gameOverScore: {fileID: 703483305}
-  timer: 30
+  timer: 40
   endMessage: {fileID: 168420543}
 --- !u!1 &539452333
 GameObject:
