@@ -460,7 +460,7 @@ MonoBehaviour:
   velocity: 6
   kakaPrefab: {fileID: 6578058318979312624, guid: 87870b34302542747a8e284205a8a7b6, type: 3}
   kakaOffSet: {fileID: 304876513}
-  tiempoEntreDisparos: 0.3
+  TIMEMAX: 0
 --- !u!4 &174183695 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2928101134417807372, guid: b78a171cd1e851a45845bad560fb7506, type: 3}
@@ -2551,7 +2551,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 1a8ed22909a74744cbc0dceeaea1dfca, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
