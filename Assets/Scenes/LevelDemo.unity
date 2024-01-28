@@ -458,6 +458,7 @@ MonoBehaviour:
   velocity: 6
   kakaPrefab: {fileID: 6578058318979312624, guid: 87870b34302542747a8e284205a8a7b6, type: 3}
   kakaOffSet: {fileID: 304876513}
+  TIMEMAX: 0.5
 --- !u!4 &174183695 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2928101134417807372, guid: b78a171cd1e851a45845bad560fb7506, type: 3}
