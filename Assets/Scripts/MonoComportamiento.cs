@@ -21,6 +21,11 @@ public class MonoComportamiento : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (ManagerController.gameover){
+            // No Update On GameOver
+            GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            return;
+        }
         GetComponent<Rigidbody2D>().velocity = new Vector2(Input.GetAxis("Horizontal") * velocity, GetComponent<Rigidbody2D>().velocity.y);
         lanzamiento();
     }

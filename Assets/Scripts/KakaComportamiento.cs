@@ -20,6 +20,11 @@ public class KakaComportamiento : MonoBehaviour
     {
         transform.localScale = new Vector3(transform.localScale.x - 0.005f, transform.localScale.y - 0.005f, transform.localScale.z - 0.005f);
 
+        if(transform.position.y > 10){
+            //Save Memory
+            Destroy(gameObject);
+        }
+
     }
 
     private void OnTriggerEnter2D(Collider2D npc)

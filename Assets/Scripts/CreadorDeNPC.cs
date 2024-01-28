@@ -11,6 +11,7 @@ public class CreadorDeNPC : MonoBehaviour
     public PersonaController vieja;
     public PersonaController robot;
     public Transform personajeOffSet;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +25,14 @@ public class CreadorDeNPC : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(ManagerController.gameover){
+        //Stop Generating NPC
+        CancelInvoke("GenerarMama");
+        CancelInvoke("GenerarNinoConGlobo");
+        CancelInvoke("GenerarCiego");
+        CancelInvoke("GenerarVieja");
+        CancelInvoke("GenerarRobot");
+        }        
     }
 
     void GenerarMama()
