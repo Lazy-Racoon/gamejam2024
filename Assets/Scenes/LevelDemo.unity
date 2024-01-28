@@ -855,6 +855,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hombre
       objectReference: {fileID: 0}
+    - target: {fileID: 6528093892920506897, guid: b78a171cd1e851a45845bad560fb7506, type: 3}
+      propertyPath: scoreNPC
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1667,7 +1671,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: a14aaf48d8c3ef5479e7db010686d735, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2273,6 +2277,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: -2
       objectReference: {fileID: 0}
+    - target: {fileID: 8149660547849858137, guid: b11d435d4088907429b180bc7f3e0efd, type: 3}
+      propertyPath: scoreNPC
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2329,6 +2337,10 @@ PrefabInstance:
     - target: {fileID: 7246674602258493782, guid: 6aa2f1ea624cf5f46bae98a04e28caed, type: 3}
       propertyPath: m_SortingOrder
       value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8300672999020755683, guid: 6aa2f1ea624cf5f46bae98a04e28caed, type: 3}
+      propertyPath: scoreNPC
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8368887828509285053, guid: 6aa2f1ea624cf5f46bae98a04e28caed, type: 3}
       propertyPath: m_Name
@@ -2390,6 +2402,10 @@ PrefabInstance:
     - target: {fileID: 4225489584683172700, guid: 07f5250de3220784ba876c59f313bf62, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4537503411184436552, guid: 07f5250de3220784ba876c59f313bf62, type: 3}
+      propertyPath: scoreNPC
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2464,6 +2480,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: -2
       objectReference: {fileID: 0}
+    - target: {fileID: 4310726984261391467, guid: be9d9805d7bd0f240b5ce3836a2354c8, type: 3}
+      propertyPath: scoreNPC
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 6850335489161368702, guid: be9d9805d7bd0f240b5ce3836a2354c8, type: 3}
       propertyPath: m_Name
       value: Vieja
@@ -2535,6 +2555,10 @@ PrefabInstance:
     - target: {fileID: 3893711966688515380, guid: 470b94841fe55514c8300be5f25ed43f, type: 3}
       propertyPath: m_Name
       value: MadreConCarro
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781469134086743021, guid: 470b94841fe55514c8300be5f25ed43f, type: 3}
+      propertyPath: scoreNPC
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7130269745430286953, guid: 470b94841fe55514c8300be5f25ed43f, type: 3}
       propertyPath: m_SortingOrder

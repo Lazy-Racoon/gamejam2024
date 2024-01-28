@@ -4,10 +4,12 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class PersonaController : MonoBehaviour
 {
+    public int scoreNPC;
     public float velocity;
     private TextMeshProUGUI scoreTExt;
     private Image profilePicture;
@@ -42,7 +44,7 @@ public class PersonaController : MonoBehaviour
     void OnTriggerEnter2D(Collider2D element)
     {
         if (element.tag == "Kaka"){
-            MonoComportamiento.score++;  //  The code that any instance can use to cause the score to be incremented, since the playerScore variable is a Static member, all instances of this class will have access to its value regardless of what instance next updates it.
+            MonoComportamiento.score+= scoreNPC;  //  The code that any instance can use to cause the score to be incremented, since the playerScore variable is a Static member, all instances of this class will have access to its value regardless of what instance next updates it.
             scoreTExt.text = "Score: " + MonoComportamiento.score;
             profile.SetActive(true);
             monkeyprofile.SetActive(true);
