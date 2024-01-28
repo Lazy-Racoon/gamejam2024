@@ -34,7 +34,7 @@ public class PersonaController : MonoBehaviour
       }
     }
 
-    public void setPicture(string imagePath){
+    public void SetPicture(string imagePath){
         //ProfileImage Should be in resource folder
         picture = Resources.Load<Sprite>(imagePath);
     }
@@ -79,16 +79,13 @@ public class PersonaController : MonoBehaviour
 
     GameObject FindInActiveObjectByTag(string tag){
         Transform[] objs = Resources.FindObjectsOfTypeAll<Transform>() as Transform[];
-        for (int i = 0; i < objs.Length; i++)
-        {
-            if (objs[i].hideFlags == HideFlags.None)
-            {
-                if (objs[i].CompareTag(tag))
-                {
+        for (int i = 0; i < objs.Length; i++){
+            if (objs[i].hideFlags == HideFlags.None){
+                if (objs[i].CompareTag(tag)){
                     return objs[i].gameObject;
                 }
-                }
             }
+        }
         return null;
     }
 
