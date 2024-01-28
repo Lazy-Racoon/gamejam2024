@@ -73,7 +73,7 @@ public class PersonaController : MonoBehaviour
             hideProfileImage();
         }
         else{
-            GetComponent<Rigidbody2D>().velocity = new Vector2(velocity,0);
+            GetComponent<Rigidbody2D>().velocity = new Vector2(-velocity,0);
         }
     }
 
