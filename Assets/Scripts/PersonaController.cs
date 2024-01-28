@@ -11,21 +11,26 @@ public class PersonaController : MonoBehaviour
     public float velocity;
     private TextMeshProUGUI scoreTExt;
     private Image profilePicture;
+    private Image monkeyProfilePicture;
     private GameObject canvas;
     private GameObject profile;
+    private GameObject monkeyprofile;
     private bool hurt = false;
     private float count = 0;
     private float TIMEMAX = 1f;
     Sprite picture;
+    Sprite monkeyPicture;
     // Start is called before the first frame update
     
     private void Awake(){
       canvas = GameObject.FindGameObjectsWithTag("CanvasText")[0];
       //Only one element should use that tag
       profile = FindInActiveObjectByTag("personProfile");
+      monkeyprofile = FindInActiveObjectByTag("monkeyProfile");
       scoreTExt = canvas.GetComponent<TextMeshProUGUI>();
-      if(profile){
-      profilePicture = profile.GetComponent<Image>();     
+      if(profile && monkeyprofile){
+      profilePicture = profile.GetComponent<Image>();
+      monkeyProfilePicture = monkeyprofile.GetComponent<Image>();
       }
     }
 
@@ -40,6 +45,7 @@ public class PersonaController : MonoBehaviour
             MonoComportamiento.score++;  //  The code that any instance can use to cause the score to be incremented, since the playerScore variable is a Static member, all instances of this class will have access to its value regardless of what instance next updates it.
             scoreTExt.text = "Score: " + MonoComportamiento.score;
             profile.SetActive(true);
+            monkeyprofile.SetActive(true);
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             hurt = true;
             count = 0;    
@@ -51,6 +57,8 @@ public class PersonaController : MonoBehaviour
         //Only one player, so should be the first        
         scoreTExt.text = "Score: " + MonoComportamiento.score;
         profilePicture.sprite = picture;
+        monkeyPicture = Resources.Load<Sprite>("score_mono");
+        monkeyProfilePicture.sprite = monkeyPicture;
     }
 
     // Update is called once per frame
@@ -89,6 +97,7 @@ public class PersonaController : MonoBehaviour
             //Hide Image
             if(count > TIMEMAX){
                 profile.SetActive(false);
+                monkeyprofile.SetActive(false);
                 hurt = false;
             }                        
     }

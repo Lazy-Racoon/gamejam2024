@@ -9,6 +9,7 @@ TagManager:
   - npc
   - CanvasText
   - personProfile
+  - monkeyProfile
   layers:
   - Default
   - TransparentFX
