@@ -246,4 +246,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01295c38ea5371741aa0f73b9d22bad4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 4
+  scoreNPC: 5
+  velocity: 4.5

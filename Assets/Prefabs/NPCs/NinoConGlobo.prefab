@@ -162,6 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01295c38ea5371741aa0f73b9d22bad4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreNPC: 5
   velocity: 4
 --- !u!1 &7655129093307340252
 GameObject:
@@ -235,7 +236,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: d0d561ebf4c86654b911f836d27c7421, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
