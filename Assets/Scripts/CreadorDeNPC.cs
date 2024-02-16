@@ -11,17 +11,23 @@ public class CreadorDeNPC : MonoBehaviour
     public PersonaController vieja;
     public PersonaController robot;
     public PersonaController hombre;
+    public PersonaController mono;
     public Transform personajeOffSet;
 
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("GenerarMama", 7.0f, 12.0f);
-        InvokeRepeating("GenerarNinoConGlobo", 3.0f, 8.0f);
-        InvokeRepeating("GenerarCiego", 5.0f, 14.0f);
-        InvokeRepeating("GenerarVieja", 13.0f, 18.0f);
-        InvokeRepeating("GenerarRobot", 10.0f, 24.0f);
-        InvokeRepeating("GenerarHombre", 1.0f, 9.0f);
+        InvokeRepeating("GenerarMama", 10.0f, 9.0f);
+        InvokeRepeating("GenerarNinoConGlobo", 3.0f, 7.0f);
+        InvokeRepeating("GenerarCiego", 5.0f, 7.0f);
+        InvokeRepeating("GenerarVieja", 20.0f, 10.0f);
+        InvokeRepeating("GenerarRobot", 15.0f, 7.0f);
+        InvokeRepeating("GenerarHombre", 1.0f, 5.0f);
+        InvokeRepeating("GenerarMama", 30.0f, 4.0f);
+        InvokeRepeating("GenerarVieja", 35.0f, 56.0f);
+        InvokeRepeating("GenerarRobot", 32.0f, 4.0f);
+        InvokeRepeating("GenerarNinoConGlobo", 34.0f, 7.0f);
+        InvokeRepeating("GenerarMono", 10.0f, 9.0f);
     }
 
     // Update is called once per frame
@@ -41,19 +47,19 @@ public class CreadorDeNPC : MonoBehaviour
     void GenerarMama()
     {
         PersonaController person = Instantiate(mamaConBebe, personajeOffSet.position, transform.rotation);
-        person.SetPicture("vieja_cara");
+        person.SetPicture("mujer_cara");
 
     }
 
     void GenerarNinoConGlobo()
     {
         PersonaController person = Instantiate(ninoConGlobo, personajeOffSet.position, transform.rotation);
-        person.SetPicture("vieja_cara");
+        person.SetPicture("nino_cara");
     }
     void GenerarCiego()
     {
         PersonaController person = Instantiate(ciego, personajeOffSet.position, transform.rotation);
-        person.SetPicture("vieja_cara");
+        person.SetPicture("ciego_cara");
     }
 
     void GenerarVieja()
@@ -65,11 +71,17 @@ public class CreadorDeNPC : MonoBehaviour
     void GenerarRobot()
     {
         PersonaController person = Instantiate(robot, personajeOffSet.position, transform.rotation);
-        person.SetPicture("vieja_cara");
+        person.SetPicture("robot_cara");
     }
     void GenerarHombre()
     {
         PersonaController person = Instantiate(hombre, personajeOffSet.position, transform.rotation);
-        person.SetPicture("vieja_cara");
+        person.SetPicture("hombre_cara");
+    }
+
+    void GenerarMono()
+    {
+        PersonaController person = Instantiate(mono, personajeOffSet.position, transform.rotation);
+        person.SetPicture("mono_cara");
     }
 }

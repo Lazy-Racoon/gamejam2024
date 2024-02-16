@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Net.NetworkInformation;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ManagerController : MonoBehaviour
 {
@@ -26,7 +27,8 @@ public class ManagerController : MonoBehaviour
             timer -= Time.deltaTime;
         }else{
             gameover = true;
-            endMessage.SetActive(true);
+            SceneManager.LoadScene("CREDITS");
+            //endMessage.SetActive(true);
             gameOverScore.text = "Score: " + MonoComportamiento.score;
         }
     }
